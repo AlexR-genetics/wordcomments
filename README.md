@@ -21,7 +21,7 @@ Install the development version from GitHub:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("AlexR_genetics/wordcomments")
+devtools::install_github("AlexR-genetics/wordcomments")
 ```
 
 ## Quick Start
@@ -176,6 +176,6 @@ If you use this package in your research, please cite it:
   author = {Rammos, Alexandros},
   title = {wordcomments: Extract and Analyze Comments from Word Documents},
   year = {2025},
-  url = {https://github.com/AlexR_Genetics/wordcomments}
+  url = {https://github.com/AlexR-genetics/wordcomments}
 }
 ```
