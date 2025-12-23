@@ -1,0 +1,27 @@
+# R files
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+
+# R package build files
+*.tar.gz
+*.Rcheck/
+.Rproj.user/
+
+# IDE
+.idea/
+*.Rproj
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation builds
+docs/
+inst/doc
+/doc/
+/Meta/
+
+# Test artifacts
+tests/testthat/_snaps
