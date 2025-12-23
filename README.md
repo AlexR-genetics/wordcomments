@@ -1,7 +1,6 @@
 # wordcomments <img src="man/figures/logo.png" align="right" height="139" />
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/yourusername/wordcomments/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/yourusername/wordcomments/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/wordcomments)](https://CRAN.R-project.org/package=wordcomments)
 <!-- badges: end -->
 
@@ -143,23 +142,6 @@ export_comments(comments, "simple.csv",
                 columns = c("Author", "Comment", "Resolved"))
 ```
 
-## Typical Workflow for Manuscript Revision
-
-```r
-library(wordcomments)
-
-# 1. Load commented manuscript
-comments <- extract_comments("reviewed_manuscript.docx")
-
-# 2. Get overview
-comment_summary(comments)
-
-# 3. Generate response document for the journal
-generate_response_table(comments, "response_to_reviewers.xlsx",
-                        include_resolved = FALSE)
-
-# 4. Open in Excel, fill in your responses, submit to journal!
-```
 
 ## Technical Notes
 
@@ -183,7 +165,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT © Max Moldovan
+MIT © Alexandros Rammos
 
 ## Citation
 
@@ -191,9 +173,9 @@ If you use this package in your research, please cite it:
 
 ```
 @software{wordcomments,
-  author = {Moldovan, Max},
+  author = {Rammos, Alexandros},
   title = {wordcomments: Extract and Analyze Comments from Word Documents},
   year = {2025},
-  url = {https://github.com/yourusername/wordcomments}
+  url = {https://github.com/AlexR_Genetics/wordcomments}
 }
 ```
