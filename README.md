@@ -3,7 +3,7 @@
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/AlexR-genetics/wordcomments/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AlexR-genetics/wordcomments/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/wordcomments)](https://CRAN.R-project.org/package=wordcomments)
-[![DOI](https://zenodo.org/badge/DOI/YOUR-DOI-HERE.svg)](https://doi.org/YOUR-DOI-HERE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18040873.svg)](10.5281/zenodo.18040873.)
 <!-- badges: end -->
 
 **wordcomments** is an R package for extracting, analyzing, and managing comments from Microsoft Word (.docx) documents. It's particularly useful for academic manuscript revision workflows and collaborative document review.
