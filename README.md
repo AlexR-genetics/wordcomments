@@ -1,7 +1,7 @@
 # wordcomments <img src="man/figures/logo.png" align="right" height="139" />
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/yourusername/wordcomments/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/yourusername/wordcomments/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/AlexR_genetics/wordcomments/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AlexR_genetics/wordcomments/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/wordcomments)](https://CRAN.R-project.org/package=wordcomments)
 <!-- badges: end -->
 
@@ -22,7 +22,7 @@ Install the development version from GitHub:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("yourusername/wordcomments")
+devtools::install_github("AlexR_genetics/wordcomments")
 ```
 
 ## Quick Start
@@ -194,6 +194,6 @@ If you use this package in your research, please cite it:
   author = {Moldovan, Max},
   title = {wordcomments: Extract and Analyze Comments from Word Documents},
   year = {2025},
-  url = {https://github.com/yourusername/wordcomments}
+  url = {https://github.com/AlexR_genetics/wordcomments}
 }
 ```

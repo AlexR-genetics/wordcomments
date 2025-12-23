@@ -2,8 +2,8 @@ Package: wordcomments
 Title: Extract and Analyze Comments from Word Documents
 Version: 0.1.0
 Authors@R: 
-    person("Alexandros", "Rammos", , "vd18986@bristol.ac.uk", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0001-7491-9659"))
+    person("Max", "Moldovan", , "max.moldovan@bristol.ac.uk", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: A toolkit for extracting, analyzing, and managing comments from 
     Microsoft Word (.docx) documents. Features include comment extraction with 
     full metadata, thread detection for comment conversations, filtering by 
@@ -26,5 +26,5 @@ Suggests:
     testthat (>= 3.0.0),
     knitr,
     rmarkdown
-URL: https://github.com/AlexR-genetics/wordcomments
-BugReports: https://github.com/AlexR-genetics/wordcomments/issues
+URL: https://github.com/AlexR_genetics/wordcomments
+BugReports: https://github.com/AlexR_genetics/wordcomments/issues
