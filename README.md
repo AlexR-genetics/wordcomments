@@ -1,4 +1,4 @@
-# wordcomments <img src="man/figures/logo.png" align="right" height="139" />
+# wordcomments
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/wordcomments)](https://CRAN.R-project.org/package=wordcomments)
