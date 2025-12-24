@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/AlexR-genetics/wordcomments/blob/main/inst/CITATION)
+[`inst/CITATION`](https://github.com/AlexR-genetics/wordcomments/blob/v0.1.1/inst/CITATION)
 
 Rammos, A. (2025). wordcomments: Extract and Analyze Comments from Word
 Documents. R package version 0.1.0.
