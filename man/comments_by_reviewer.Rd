@@ -18,7 +18,7 @@ list of data frames split by author. Default FALSE.}
 }
 \value{
 If \code{reviewer} is specified or \code{split = FALSE}: a data frame.
-  If \code{split = TRUE}: a named list of data frames, one per author.
+If \code{split = TRUE}: a named list of data frames, one per author.
 }
 \description{
 Filters comments to a specific reviewer or splits all comments into
@@ -33,7 +33,7 @@ smith_comments <- comments_by_reviewer(comments, reviewer = "Smith")
 
 # Split by all reviewers
 by_reviewer <- comments_by_reviewer(comments, split = TRUE)
-names(by_reviewer)  # Lists all reviewer names
+names(by_reviewer)  # Shows all reviewer names
 }
 
 }

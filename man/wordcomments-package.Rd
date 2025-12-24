@@ -2,8 +2,8 @@
 % Please edit documentation in R/wordcomments-package.R
 \docType{package}
 \name{wordcomments-package}
-\alias{wordcomments}
 \alias{wordcomments-package}
+\alias{wordcomments}
 \title{wordcomments: Extract and Analyze Comments from Word Documents}
 \description{
 A toolkit for extracting, analyzing, and managing comments from Microsoft
@@ -13,20 +13,22 @@ workflows and collaborative document review.
 \section{Main Functions}{
 
 \describe{
-  \item{\code{\link{extract_comments}}}{Extract all comments with full metadata}
-  \item{\code{\link{has_comments}}}{Quick check for presence of comments}
-  \item{\code{\link{comment_summary}}}{Generate summary statistics}
-  \item{\code{\link{comments_by_reviewer}}}{Filter or split comments by author}
-  \item{\code{\link{find_comment_threads}}}{Group comments into conversation threads}
-  \item{\code{\link{generate_response_table}}}{Create reviewer response document}
-  \item{\code{\link{export_comments}}}{Export to Excel, Word, CSV, Markdown, or HTML}
+\item{\code{\link{extract_comments}}}{Extract all comments with full metadata}
+\item{\code{\link{extract_comments_multiple}}}{Extract and merge comments from multiple documents}
+\item{\code{\link{has_comments}}}{Quick check for presence of comments}
+\item{\code{\link{has_comments_multiple}}}{Quick check across multiple documents}
+\item{\code{\link{comment_summary}}}{Generate summary statistics}
+\item{\code{\link{comments_by_reviewer}}}{Filter or split comments by author}
+\item{\code{\link{find_comment_threads}}}{Group comments into conversation threads}
+\item{\code{\link{generate_response_table}}}{Create reviewer response document}
+\item{\code{\link{export_comments}}}{Export to Excel, Word, CSV, Markdown, or HTML}
 }
 }
 
 \section{Typical Workflow}{
 
-\preformatted{
-# Check for comments
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{# Check for comments
 has_comments("manuscript.docx")
 
 # Extract and summarize
@@ -35,7 +37,21 @@ comment_summary(comments)
 
 # Generate response table for journal revision
 generate_response_table(comments, "response_to_reviewers.xlsx")
+}\if{html}{\out{</div>}}
 }
+
+\section{Multi-Document Workflow}{
+
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{# Extract comments from multiple reviewer versions
+all_comments <- extract_comments_multiple(
+  c("reviewer1.docx", "reviewer2.docx", "editor.docx")
+)
+
+# Works with all other functions
+comment_summary(all_comments)
+generate_response_table(all_comments, "consolidated_response.xlsx")
+}\if{html}{\out{</div>}}
 }
 
 \seealso{
@@ -47,7 +63,6 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Alexandros Rammos \email{vd18986@bristol.ac.uk}
+\strong{Maintainer}: Alexandros Rammos \email{vd18986@bristol.ac.uk} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
 
 }
-\keyword{internal}

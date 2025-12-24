@@ -5,7 +5,7 @@ bibentry(
   title    = "wordcomments: Extract and Analyze Comments from Word Documents",
   author   = person("Alexandros", "Rammos"),
   year     = "2025",
-  note     = "R package version 0.1.0",
+  note     = "R package version 0.2.0",
   url      = "https://github.com/AlexR-genetics/wordcomments",
   doi      = "10.5281/zenodo.18040873",
   textVersion = paste(

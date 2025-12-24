@@ -15,16 +15,16 @@ If FALSE, only returns unresolved comments.}
 \value{
 A data frame with the following columns:
 \describe{
-  \item{Text}{The text that was commented on}
-  \item{Comment}{The comment content}
-  \item{Author}{Comment author name}
-  \item{Date}{Date and time the comment was made}
-  \item{Line}{Paragraph number in document (approximate line reference)}
-  \item{Page}{Estimated page number}
-  \item{Resolved}{Logical indicating if comment thread is resolved}
-  \item{comment_id}{Internal comment ID}
-  \item{para_id}{Paragraph ID for thread matching}
-  \item{parent_id}{Parent paragraph ID (for replies)}
+\item{Text}{The text that was commented on}
+\item{Comment}{The comment content}
+\item{Author}{Comment author name}
+\item{Date}{Date and time the comment was made}
+\item{Line}{Paragraph number in document (approximate line reference)}
+\item{Page}{Estimated page number}
+\item{Resolved}{Logical indicating if comment thread is resolved}
+\item{comment_id}{Internal comment ID}
+\item{para_id}{Paragraph ID for thread matching}
+\item{parent_id}{Parent paragraph ID (for replies)}
 }
 }
 \description{

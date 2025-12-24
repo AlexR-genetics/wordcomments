@@ -19,7 +19,9 @@ reference:
     desc: "Core functions for extracting comments from Word documents"
     contents:
       - extract_comments
+      - extract_comments_multiple
       - has_comments
+      - has_comments_multiple
 
   - title: "Analyze Comments"
     desc: "Functions for analyzing and organizing comments"

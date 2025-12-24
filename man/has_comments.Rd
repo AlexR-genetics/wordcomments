@@ -11,7 +11,7 @@ has_comments(docx_path)
 }
 \value{
 Logical. TRUE if the document contains at least one comment,
-  FALSE otherwise.
+FALSE otherwise.
 }
 \description{
 Performs a fast check for the presence of comments without full parsing.

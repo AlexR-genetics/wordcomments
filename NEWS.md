@@ -1,3 +1,14 @@
+# wordcomments 0.2.0
+
+## New Features
+
+* `extract_comments_multiple()` - Extract and merge comments from multiple document versions with automatic ID renumbering to avoid conflicts
+* `has_comments_multiple()` - Quick check for comments across multiple documents
+
+## Notes
+
+* Output from `extract_comments_multiple()` is fully compatible with all existing functions (`comment_summary()`, `generate_response_table()`, etc.)
+
 # wordcomments 0.1.0
 
 ## New Features

@@ -4,7 +4,6 @@
 [![R-CMD-check](https://github.com/AlexR-genetics/wordcomments/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AlexR-genetics/wordcomments/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/wordcomments)](https://CRAN.R-project.org/package=wordcomments)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18040873.svg)](https://doi.org/10.5281/zenodo.18040873)
-
 <!-- badges: end -->
 
 **wordcomments** is an R package for extracting, analyzing, and managing comments from Microsoft Word (.docx) documents. It's particularly useful for academic manuscript revision workflows and collaborative document review.
@@ -12,6 +11,7 @@
 ## Features
 
 - 📄 **Extract comments** with full metadata (author, date, position, resolution status)
+- 📚 **Multi-document support** - merge comments from multiple reviewer versions
 - 🧵 **Thread detection** for comment conversations and replies
 - 👥 **Filter by reviewer** for multi-author documents
 - 📊 **Summary statistics** on comment activity
@@ -161,6 +161,33 @@ generate_response_table(comments, "response_to_reviewers.xlsx",
                         include_resolved = FALSE)
 
 # 4. Open in Excel, fill in your responses, submit to journal!
+```
+
+## Multi-Document Workflow
+
+When you have multiple reviewers working on separate copies of a document:
+
+```r
+# Extract and merge comments from all reviewer versions
+all_comments <- extract_comments_multiple(
+  c("manuscript_reviewer1.docx",
+    "manuscript_reviewer2.docx",
+    "manuscript_editor.docx")
+)
+
+# Works with all other functions
+comment_summary(all_comments)
+comments_by_reviewer(all_comments, split = TRUE)
+
+# Generate consolidated response table
+generate_response_table(all_comments, "consolidated_response.xlsx")
+
+# Optional: track which document each comment came from
+all_comments <- extract_comments_multiple(
+  c("reviewer1.docx", "reviewer2.docx"),
+  add_source = TRUE
+)
+table(all_comments$Source)
 ```
 
 ## Technical Notes

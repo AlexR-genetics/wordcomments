@@ -7,7 +7,9 @@
 #' @section Main Functions:
 #' \describe{
 #'   \item{\code{\link{extract_comments}}}{Extract all comments with full metadata}
+#'   \item{\code{\link{extract_comments_multiple}}}{Extract and merge comments from multiple documents}
 #'   \item{\code{\link{has_comments}}}{Quick check for presence of comments}
+#'   \item{\code{\link{has_comments_multiple}}}{Quick check across multiple documents}
 #'   \item{\code{\link{comment_summary}}}{Generate summary statistics}
 #'   \item{\code{\link{comments_by_reviewer}}}{Filter or split comments by author}
 #'   \item{\code{\link{find_comment_threads}}}{Group comments into conversation threads}
@@ -26,6 +28,18 @@
 #'
 #' # Generate response table for journal revision
 #' generate_response_table(comments, "response_to_reviewers.xlsx")
+#' ```
+#'
+#' @section Multi-Document Workflow:
+#' ```
+#' # Extract comments from multiple reviewer versions
+#' all_comments <- extract_comments_multiple(
+#'   c("reviewer1.docx", "reviewer2.docx", "editor.docx")
+#' )
+#'
+#' # Works with all other functions
+#' comment_summary(all_comments)
+#' generate_response_table(all_comments, "consolidated_response.xlsx")
 #' ```
 #'
 #' @docType package
