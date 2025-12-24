@@ -26,6 +26,20 @@ Install the development version from GitHub:
 devtools::install_github("AlexR-genetics/wordcomments")
 ```
 
+## Graphical User Interface
+
+wordcomments includes an interactive Shiny GUI:
+
+``` r
+library(wordcomments)
+launch_app()
+```
+
+This opens a browser-based interface with: - File browser for single or
+multiple documents - Interactive tables with filtering and sorting -
+Tabs for Comments, Summary, By Reviewer, Threads, and Response Table -
+Export to multiple formats
+
 ## Quick Start
 
 ``` r
@@ -135,51 +149,31 @@ export_comments(comments, "simple.csv",
                 columns = c("Author", "Comment", "Resolved"))
 ```
 
-## Typical Workflow for Manuscript Revision
+    ## Multi-Document Workflow
 
-``` r
-library(wordcomments)
+    When you have multiple reviewers working on separate copies of a document:
 
-# 1. Load commented manuscript
-comments <- extract_comments("reviewed_manuscript.docx")
+    ```r
+    # Extract and merge comments from all reviewer versions
+    all_comments <- extract_comments_multiple(
+      c("manuscript_reviewer1.docx",
+        "manuscript_reviewer2.docx",
+        "manuscript_editor.docx")
+    )
 
-# 2. Get overview
-comment_summary(comments)
+    # Works with all other functions
+    comment_summary(all_comments)
+    comments_by_reviewer(all_comments, split = TRUE)
 
-# 3. Generate response document for the journal
-generate_response_table(comments, "response_to_reviewers.xlsx",
-                        include_resolved = FALSE)
+    # Generate consolidated response table
+    generate_response_table(all_comments, "consolidated_response.xlsx")
 
-# 4. Open in Excel, fill in your responses, submit to journal!
-```
-
-## Multi-Document Workflow
-
-When you have multiple reviewers working on separate copies of a
-document:
-
-``` r
-# Extract and merge comments from all reviewer versions
-all_comments <- extract_comments_multiple(
-  c("manuscript_reviewer1.docx",
-    "manuscript_reviewer2.docx",
-    "manuscript_editor.docx")
-)
-
-# Works with all other functions
-comment_summary(all_comments)
-comments_by_reviewer(all_comments, split = TRUE)
-
-# Generate consolidated response table
-generate_response_table(all_comments, "consolidated_response.xlsx")
-
-# Optional: track which document each comment came from
-all_comments <- extract_comments_multiple(
-  c("reviewer1.docx", "reviewer2.docx"),
-  add_source = TRUE
-)
-table(all_comments$Source)
-```
+    # Optional: track which document each comment came from
+    all_comments <- extract_comments_multiple(
+      c("reviewer1.docx", "reviewer2.docx"),
+      add_source = TRUE
+    )
+    table(all_comments$Source)
 
 ## Technical Notes
 
@@ -222,6 +216,14 @@ If you use this package in your research, please cite it:
     }
 
 # Package index
+
+## GUI
+
+Interactive graphical interface
+
+- [`launch_app()`](https://alexr-genetics.github.io/wordcomments/reference/launch_app.md)
+  [`run_wordcomments()`](https://alexr-genetics.github.io/wordcomments/reference/launch_app.md)
+  : Launch the wordcomments Shiny Application
 
 ## Extract Comments
 

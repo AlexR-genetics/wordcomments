@@ -74,9 +74,18 @@
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"AlexR-genetics/wordcomments"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
+<h2 id="graphical-user-interface">Graphical User Interface<a class="anchor" aria-label="anchor" href="#graphical-user-interface"></a>
+</h2>
+<p>wordcomments includes an interactive Shiny GUI:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/AlexR-genetics/wordcomments" class="external-link">wordcomments</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/launch_app.html">launch_app</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>This opens a browser-based interface with: - File browser for single or multiple documents - Interactive tables with filtering and sorting - Tabs for Comments, Summary, By Reviewer, Threads, and Response Table - Export to multiple formats</p>
+</div>
+<div class="section level2">
 <h2 id="quick-start">Quick Start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/AlexR-genetics/wordcomments" class="external-link">wordcomments</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Check if a document has comments</span></span>
@@ -94,7 +103,7 @@
 <div class="section level3">
 <h3 id="extract-comments">Extract Comments<a class="anchor" aria-label="anchor" href="#extract-comments"></a>
 </h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Extract all comments</span></span>
 <span><span class="va">comments</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/extract_comments.html">extract_comments</a></span><span class="op">(</span><span class="st">"manuscript.docx"</span><span class="op">)</span></span>
 <span></span>
@@ -105,7 +114,7 @@
 <div class="section level3">
 <h3 id="summary-statistics">Summary Statistics<a class="anchor" aria-label="anchor" href="#summary-statistics"></a>
 </h3>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/comment_summary.html">comment_summary</a></span><span class="op">(</span><span class="va">comments</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">summary</span><span class="op">)</span></span>
 <span></span>
@@ -126,7 +135,7 @@
 <div class="section level3">
 <h3 id="filter-by-reviewer">Filter by Reviewer<a class="anchor" aria-label="anchor" href="#filter-by-reviewer"></a>
 </h3>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Get comments from a specific reviewer</span></span>
 <span><span class="va">reviewer1</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/comments_by_reviewer.html">comments_by_reviewer</a></span><span class="op">(</span><span class="va">comments</span>, reviewer <span class="op">=</span> <span class="st">"Smith"</span><span class="op">)</span></span>
 <span></span>
@@ -137,7 +146,7 @@
 <div class="section level3">
 <h3 id="find-comment-threads">Find Comment Threads<a class="anchor" aria-label="anchor" href="#find-comment-threads"></a>
 </h3>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Add thread information to comments</span></span>
 <span><span class="va">threaded</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/find_comment_threads.html">find_comment_threads</a></span><span class="op">(</span><span class="va">comments</span><span class="op">)</span></span>
 <span><span class="co"># Adds: thread_id, thread_size, reply_depth</span></span>
@@ -149,7 +158,7 @@
 <h3 id="generate-response-table">Generate Response Table<a class="anchor" aria-label="anchor" href="#generate-response-table"></a>
 </h3>
 <p>Perfect for journal manuscript revisions:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Generate and export response table</span></span>
 <span><span class="fu"><a href="reference/generate_response_table.html">generate_response_table</a></span><span class="op">(</span><span class="st">"manuscript.docx"</span>, <span class="st">"response_to_reviewers.xlsx"</span><span class="op">)</span></span></code></pre></div>
 <p>Creates a table with columns: - # (comment number) - Reviewer - Location (page/line) - Commented Text - Reviewer Comment - Author Response (empty - for you to fill) - Action Taken (empty - for you to fill) - Line in Revision (empty - for you to fill)</p>
@@ -157,7 +166,7 @@
 <div class="section level3">
 <h3 id="export-comments">Export Comments<a class="anchor" aria-label="anchor" href="#export-comments"></a>
 </h3>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Export to various formats</span></span>
 <span><span class="fu"><a href="reference/export_comments.html">export_comments</a></span><span class="op">(</span><span class="va">comments</span>, <span class="st">"comments.xlsx"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/export_comments.html">export_comments</a></span><span class="op">(</span><span class="va">comments</span>, <span class="st">"comments.docx"</span><span class="op">)</span></span>
@@ -171,51 +180,33 @@
 <span><span class="co"># Export specific columns</span></span>
 <span><span class="fu"><a href="reference/export_comments.html">export_comments</a></span><span class="op">(</span><span class="va">comments</span>, <span class="st">"simple.csv"</span>, </span>
 <span>                columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Author"</span>, <span class="st">"Comment"</span>, <span class="st">"Resolved"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>
+## Multi-Document Workflow
+
+When you have multiple reviewers working on separate copies of a document:
+
+```r
+# Extract and merge comments from all reviewer versions
+all_comments &lt;- extract_comments_multiple(
+  c("manuscript_reviewer1.docx",
+    "manuscript_reviewer2.docx",
+    "manuscript_editor.docx")
+)
+
+# Works with all other functions
+comment_summary(all_comments)
+comments_by_reviewer(all_comments, split = TRUE)
+
+# Generate consolidated response table
+generate_response_table(all_comments, "consolidated_response.xlsx")
+
+# Optional: track which document each comment came from
+all_comments &lt;- extract_comments_multiple(
+  c("reviewer1.docx", "reviewer2.docx"),
+  add_source = TRUE
+)
+table(all_comments$Source)</code></pre>
 </div>
-</div>
-<div class="section level2">
-<h2 id="typical-workflow-for-manuscript-revision">Typical Workflow for Manuscript Revision<a class="anchor" aria-label="anchor" href="#typical-workflow-for-manuscript-revision"></a>
-</h2>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/AlexR-genetics/wordcomments" class="external-link">wordcomments</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># 1. Load commented manuscript</span></span>
-<span><span class="va">comments</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/extract_comments.html">extract_comments</a></span><span class="op">(</span><span class="st">"reviewed_manuscript.docx"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># 2. Get overview</span></span>
-<span><span class="fu"><a href="reference/comment_summary.html">comment_summary</a></span><span class="op">(</span><span class="va">comments</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># 3. Generate response document for the journal</span></span>
-<span><span class="fu"><a href="reference/generate_response_table.html">generate_response_table</a></span><span class="op">(</span><span class="va">comments</span>, <span class="st">"response_to_reviewers.xlsx"</span>,</span>
-<span>                        include_resolved <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># 4. Open in Excel, fill in your responses, submit to journal!</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="multi-document-workflow">Multi-Document Workflow<a class="anchor" aria-label="anchor" href="#multi-document-workflow"></a>
-</h2>
-<p>When you have multiple reviewers working on separate copies of a document:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Extract and merge comments from all reviewer versions</span></span>
-<span><span class="va">all_comments</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/extract_comments_multiple.html">extract_comments_multiple</a></span><span class="op">(</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"manuscript_reviewer1.docx"</span>,</span>
-<span>    <span class="st">"manuscript_reviewer2.docx"</span>,</span>
-<span>    <span class="st">"manuscript_editor.docx"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Works with all other functions</span></span>
-<span><span class="fu"><a href="reference/comment_summary.html">comment_summary</a></span><span class="op">(</span><span class="va">all_comments</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/comments_by_reviewer.html">comments_by_reviewer</a></span><span class="op">(</span><span class="va">all_comments</span>, split <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Generate consolidated response table</span></span>
-<span><span class="fu"><a href="reference/generate_response_table.html">generate_response_table</a></span><span class="op">(</span><span class="va">all_comments</span>, <span class="st">"consolidated_response.xlsx"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Optional: track which document each comment came from</span></span>
-<span><span class="va">all_comments</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/extract_comments_multiple.html">extract_comments_multiple</a></span><span class="op">(</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"reviewer1.docx"</span>, <span class="st">"reviewer2.docx"</span><span class="op">)</span>,</span>
-<span>  add_source <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">all_comments</span><span class="op">$</span><span class="va">Source</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="technical-notes">Technical Notes<a class="anchor" aria-label="anchor" href="#technical-notes"></a>
@@ -294,7 +285,7 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Alexandros Rammos <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
+<li>Alexandros Rammos <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-7491-9659" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 </ul>
 </div>
 

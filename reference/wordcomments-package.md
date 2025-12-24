@@ -4,7 +4,17 @@ A toolkit for extracting, analyzing, and managing comments from
 Microsoft Word (.docx) documents. Particularly useful for academic
 manuscript revision workflows and collaborative document review.
 
+## Graphical User Interface
+
+For an interactive experience, launch the Shiny GUI:
+
+    launch_app()
+
 ## Main Functions
+
+- [`launch_app`](https://alexr-genetics.github.io/wordcomments/reference/launch_app.md):
+
+  Launch interactive Shiny GUI
 
 - [`extract_comments`](https://alexr-genetics.github.io/wordcomments/reference/extract_comments.md):
 
@@ -76,4 +86,4 @@ Useful links:
 ## Author
 
 **Maintainer**: Alexandros Rammos <vd18986@bristol.ac.uk>
-([ORCID](https://orcid.org/YOUR-ORCID-ID))
+([ORCID](https://orcid.org/0000-0001-7491-9659))

@@ -1,5 +1,13 @@
 # Package index
 
+## GUI
+
+Interactive graphical interface
+
+- [`launch_app()`](https://alexr-genetics.github.io/wordcomments/reference/launch_app.md)
+  [`run_wordcomments()`](https://alexr-genetics.github.io/wordcomments/reference/launch_app.md)
+  : Launch the wordcomments Shiny Application
+
 ## Extract Comments
 
 Core functions for extracting comments from Word documents
