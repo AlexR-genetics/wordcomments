@@ -189,6 +189,20 @@ all_comments <- extract_comments_multiple(
 table(all_comments$Source)
 ```
 
+## Documentation
+
+For detailed examples, see the vignettes:
+
+```r
+# Introduction to wordcomments
+vignette("introduction", package = "wordcomments")
+
+# Working with multiple co-authors
+vignette("multiple-coauthors", package = "wordcomments")
+```
+
+
+
 ## Technical Notes
 
 - **Line numbers**: Word doesn't store true line numbers internally. The `Line` column represents paragraph position, which serves as a reliable reference point.

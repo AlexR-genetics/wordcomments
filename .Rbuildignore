@@ -12,3 +12,5 @@
 ^cran-comments\.md$
 ^CRAN-SUBMISSION$
 ^\.zenodo\.json$
+^doc$
+^Meta$

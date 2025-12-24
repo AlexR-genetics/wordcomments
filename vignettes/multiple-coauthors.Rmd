@@ -1,0 +1,170 @@
+---
+title: "Working with Multiple Co-authors"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Working with Multiple Co-authors}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Overview
+
+When collaborating on a manuscript, different co-authors often work on separate copies of the document. This vignette shows how to merge and analyze comments from multiple document versions.
+
+## Setup
+
+```{r setup}
+library(wordcomments)
+```
+
+We'll use three example documents, each with comments from a different co-author:
+
+```{r}
+# Get paths to example documents
+doc1 <- system.file("extdata", "doc_v1.docx", package = "wordcomments")
+doc2 <- system.file("extdata", "doc_v2.docx", package = "wordcomments")
+doc3 <- system.file("extdata", "doc_v3.docx", package = "wordcomments")
+
+all_docs <- c(doc1, doc2, doc3)
+```
+
+## Checking Multiple Documents
+
+First, check which documents have comments:
+
+```{r}
+has_comments_multiple(all_docs)
+```
+
+## Extracting from Multiple Documents
+
+Use `extract_comments_multiple()` to merge comments from all documents:
+
+```{r}
+all_comments <- extract_comments_multiple(all_docs)
+```
+
+This returns a single data frame with comments from all documents. Comment IDs are automatically renumbered to avoid conflicts.
+
+```{r}
+nrow(all_comments)
+```
+
+## Summary Across All Documents
+
+```{r}
+comment_summary(all_comments)
+```
+
+## Splitting by Co-author
+
+View comments organized by author:
+
+```{r}
+by_author <- comments_by_reviewer(all_comments, split = TRUE)
+names(by_author)
+```
+
+```{r}
+# View one author's comments
+by_author[["Sarah Chen"]][, c("Comment", "Line", "Resolved")]
+```
+
+Filter to a specific co-author:
+
+```{r}
+sarah_comments <- comments_by_reviewer(all_comments, reviewer = "Sarah")
+nrow(sarah_comments)
+```
+
+## Finding Comment Threads
+
+Detect reply chains (where one comment replies to another):
+
+```{r}
+threads <- find_comment_threads(all_comments)
+```
+
+```{r}
+# View thread information
+threads[, c("thread_id", "thread_size", "reply_depth", "Author", "Comment")]
+```
+
+Comments with `thread_size > 1` are part of a conversation.
+
+## Tracking Source Documents
+
+To track which document each comment came from:
+
+```{r}
+all_comments_with_source <- extract_comments_multiple(all_docs, add_source = TRUE)
+```
+
+```{r}
+table(all_comments_with_source$Source)
+```
+
+## Generating a Consolidated Response Table
+
+Create a single response document for all co-authors:
+
+```{r, eval = FALSE}
+generate_response_table(all_comments, "consolidated_response.xlsx")
+```
+
+Or group responses by co-author:
+
+```{r, eval = FALSE}
+generate_response_table(all_comments, "response_by_coauthor.xlsx", 
+                        group_by_reviewer = TRUE)
+```
+
+## Exporting Merged Comments
+
+```{r, eval = FALSE}
+# Export all comments to Excel
+export_comments(all_comments, "all_coauthor_comments.xlsx")
+
+# Export only unresolved
+export_comments(all_comments, "open_comments.xlsx", include_resolved = FALSE)
+```
+
+## Using the GUI
+
+The Shiny GUI supports multiple file selection:
+
+```{r, eval = FALSE}
+launch_app()
+```
+
+In the GUI:
+
+1. Click "Browse" and select multiple .docx files (Ctrl+click)
+2. Check "Add source column" to track document origins
+3. Click "Extract Comments"
+4. Use the tabs to explore and export
+
+## Typical Workflow
+
+```{r, eval = FALSE}
+# 1. Collect document versions from co-authors
+docs <- c("draft_sarah.docx", "draft_james.docx", "draft_maria.docx")
+
+# 2. Merge all comments
+all_comments <- extract_comments_multiple(docs)
+
+# 3. Review summary
+comment_summary(all_comments)
+
+# 4. Generate response table
+generate_response_table(all_comments, "response_to_coauthors.xlsx")
+
+# 5. Fill in responses in Excel and share with co-authors
+```

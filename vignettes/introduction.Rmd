@@ -1,0 +1,131 @@
+---
+title: "Introduction to wordcomments"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to wordcomments}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Overview
+
+The `wordcomments` package extracts and analyzes comments from Microsoft Word (.docx) documents. This is useful when collaborating on documents with co-authors who provide feedback via Word's comment feature.
+
+## Setup
+
+```{r setup}
+library(wordcomments)
+```
+
+For this vignette, we'll use example documents included with the package:
+
+```{r}
+# Get path to example document
+doc_path <- system.file("extdata", "doc_v1.docx", package = "wordcomments")
+```
+
+## Checking for Comments
+
+Before extracting, you can quickly check if a document has any comments:
+```{r}
+has_comments(doc_path)
+```
+
+## Extracting Comments
+
+The main function is `extract_comments()`:
+
+```{r}
+comments <- extract_comments(doc_path)
+```
+
+This returns a data frame with all comment metadata:
+
+```{r}
+# View structure
+str(comments)
+```
+
+```{r}
+# View the comments (excluding internal ID columns)
+comments[, c("Author", "Comment", "Line", "Resolved")]
+```
+
+## Comment Summary
+
+Get an overview of comment statistics:
+
+```{r}
+summary <- comment_summary(comments)
+print(summary)
+```
+
+You can access individual summary elements:
+
+```{r}
+summary$total_comments
+summary$by_author
+```
+
+## Filtering by Resolved Status
+
+To get only unresolved comments:
+
+```{r}
+unresolved <- extract_comments(doc_path, include_resolved = FALSE)
+nrow(unresolved)
+```
+
+## Exporting Comments
+
+Export comments to various formats:
+
+```{r, eval = FALSE}
+# Excel
+export_comments(comments, "comments.xlsx")
+
+# Word document
+export_comments(comments, "comments.docx")
+
+# CSV
+export_comments(comments, "comments.csv")
+
+# Markdown
+export_comments(comments, "comments.md")
+```
+
+## Generating a Response Table
+
+For responding to co-author feedback, generate a structured response table:
+
+```{r, eval = FALSE}
+generate_response_table(comments, "response_to_coauthors.xlsx")
+```
+
+This creates a table with columns for your responses that you can fill in and share.
+
+## Using the GUI
+
+For an interactive experience, launch the Shiny GUI:
+
+```{r, eval = FALSE}
+launch_app()
+```
+
+This opens a browser-based interface where you can:
+
+- Browse and select files
+- View comments in interactive tables
+- Filter and sort by various columns
+- Export to different formats
+
+## Next Steps
+
+See the "Working with Multiple Co-authors" vignette for handling comments from multiple document versions.

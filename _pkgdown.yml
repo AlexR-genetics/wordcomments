@@ -14,6 +14,13 @@ navbar:
       href: https://github.com/AlexR-genetics/wordcomments
       aria-label: GitHub
 
+articles:
+  - title: Getting Started
+    navbar: ~
+    contents:
+      - introduction
+      - multiple-coauthors
+
 reference:
   - title: "GUI"
     desc: "Interactive graphical interface"
