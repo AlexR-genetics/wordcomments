@@ -1,8 +1,10 @@
 pandoc: 3.1.11
 pkgdown: 2.2.0
 pkgdown_sha: ~
-articles: {}
-last_built: 2025-12-24T13:25Z
+articles:
+  introduction: introduction.html
+  multiple-coauthors: multiple-coauthors.html
+last_built: 2025-12-24T14:13Z
 urls:
   reference: https://alexr-genetics.github.io/wordcomments/reference
   article: https://alexr-genetics.github.io/wordcomments/articles

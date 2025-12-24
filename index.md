@@ -175,6 +175,18 @@ export_comments(comments, "simple.csv",
     )
     table(all_comments$Source)
 
+## Documentation
+
+For detailed examples, see the vignettes:
+
+``` r
+# Introduction to wordcomments
+vignette("introduction", package = "wordcomments")
+
+# Working with multiple co-authors
+vignette("multiple-coauthors", package = "wordcomments")
+```
+
 ## Technical Notes
 
 - **Line numbers**: Word doesn’t store true line numbers internally. The
