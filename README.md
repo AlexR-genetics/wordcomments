@@ -1,9 +1,9 @@
-# wordcomments
+# wordcomments <img src="man/figures/logo.png" align="right" height="139" />
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/AlexR-genetics/wordcomments/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AlexR-genetics/wordcomments/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/wordcomments)](https://CRAN.R-project.org/package=wordcomments)
-[![DOI](https://zenodo.org/badge/DOI/YOUR-DOI-HERE.svg)](https://doi.org/YOUR-DOI-HERE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18040873.svg)](https://doi.org/10.5281/zenodo.18040873)
 <!-- badges: end -->
 
 **wordcomments** is an R package for extracting, analyzing, and managing comments from Microsoft Word (.docx) documents. It's particularly useful for academic manuscript revision workflows and collaborative document review.
@@ -144,6 +144,23 @@ export_comments(comments, "simple.csv",
                 columns = c("Author", "Comment", "Resolved"))
 ```
 
+## Typical Workflow for Manuscript Revision
+
+```r
+library(wordcomments)
+
+# 1. Load commented manuscript
+comments <- extract_comments("reviewed_manuscript.docx")
+
+# 2. Get overview
+comment_summary(comments)
+
+# 3. Generate response document for the journal
+generate_response_table(comments, "response_to_reviewers.xlsx",
+                        include_resolved = FALSE)
+
+# 4. Open in Excel, fill in your responses, submit to journal!
+```
 
 ## Technical Notes
 

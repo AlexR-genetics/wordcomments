@@ -13,16 +13,16 @@ to a .docx file (which will be processed automatically).}
 \value{
 A list of class "comment_summary" containing:
 \describe{
-\item{total_comments}{Total number of comments}
-\item{resolved}{Number of resolved comments}
-\item{unresolved}{Number of unresolved comments}
-\item{resolution_rate}{Percentage of comments resolved}
-\item{unique_authors}{Number of unique comment authors}
-\item{by_author}{Data frame with counts per author}
-\item{by_page}{Data frame with counts per page}
-\item{date_range}{List with earliest, latest dates and span in days}
-\item{comment_length}{Statistics on comment text length}
-\item{threads}{Information about comment threading}
+  \item{total_comments}{Total number of comments}
+  \item{resolved}{Number of resolved comments}
+  \item{unresolved}{Number of unresolved comments}
+  \item{resolution_rate}{Percentage of comments resolved}
+  \item{unique_authors}{Number of unique comment authors}
+  \item{by_author}{Data frame with counts per author}
+  \item{by_page}{Data frame with counts per page}
+  \item{date_range}{List with earliest, latest dates and span in days}
+  \item{comment_length}{Statistics on comment text length}
+  \item{threads}{Information about comment threading}
 }
 }
 \description{

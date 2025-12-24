@@ -16,19 +16,19 @@ thread_id column added. If FALSE, returns a nested list structure.}
 \value{
 If \code{flatten = TRUE}: a data frame with additional columns:
 \describe{
-\item{thread_id}{Integer identifying the conversation thread}
-\item{thread_size}{Number of comments in this thread}
-\item{reply_depth}{Nesting depth (0 for root comments)}
+  \item{thread_id}{Integer identifying the conversation thread}
+  \item{thread_size}{Number of comments in this thread}
+  \item{reply_depth}{Nesting depth (0 for root comments)}
 }
 
 If \code{flatten = FALSE}: a list of thread objects, each containing:
 \describe{
-\item{thread_id}{Thread identifier}
-\item{root_comment}{Data frame with the original comment}
-\item{replies}{Data frame with reply comments}
-\item{size}{Total comments in thread}
-\item{authors}{Character vector of participating authors}
-\item{resolved}{Logical indicating if thread is resolved}
+  \item{thread_id}{Thread identifier}
+  \item{root_comment}{Data frame with the original comment}
+  \item{replies}{Data frame with reply comments}
+  \item{size}{Total comments in thread}
+  \item{authors}{Character vector of participating authors}
+  \item{resolved}{Logical indicating if thread is resolved}
 }
 }
 \description{

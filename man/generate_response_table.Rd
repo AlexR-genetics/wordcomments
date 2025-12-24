@@ -27,14 +27,14 @@ comments from the response table.}
 \value{
 A data frame with columns:
 \describe{
-\item{#}{Comment number}
-\item{Reviewer}{Author of the comment}
-\item{Location}{Page and line reference}
-\item{Commented Text}{The text that was commented on}
-\item{Reviewer Comment}{The comment content}
-\item{Author Response}{Empty column for your response}
-\item{Action Taken}{Empty column to describe changes made}
-\item{Line in Revision}{Empty column for new line references}
+  \item{#}{Comment number}
+  \item{Reviewer}{Author of the comment}
+  \item{Location}{Page and line reference}
+  \item{Commented Text}{The text that was commented on}
+  \item{Reviewer Comment}{The comment content}
+  \item{Author Response}{Empty column for your response}
+  \item{Action Taken}{Empty column to describe changes made}
+  \item{Line in Revision}{Empty column for new line references}
 }
 }
 \description{

@@ -10,10 +10,10 @@ Description: A toolkit for extracting, analyzing, and managing comments from
     reviewer, summary statistics, and export to multiple formats. Particularly 
     useful for academic manuscript revision workflows and collaborative document 
     review.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
+RoxygenNote: 7.2.3
 Imports: 
     xml2,
     officer,

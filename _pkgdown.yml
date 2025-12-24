@@ -11,7 +11,7 @@ navbar:
   components:
     github:
       icon: fa-github
-      href: https://github.com/AlexR_genetics/wordcomments
+      href: https://github.com/AlexR-genetics/wordcomments
       aria-label: GitHub
 
 reference:
@@ -25,6 +25,7 @@ reference:
     desc: "Functions for analyzing and organizing comments"
     contents:
       - comment_summary
+      - print.comment_summary
       - comments_by_reviewer
       - find_comment_threads
 
@@ -33,6 +34,11 @@ reference:
     contents:
       - export_comments
       - generate_response_table
+
+  - title: "Package"
+    desc: "Package documentation"
+    contents:
+      - wordcomments-package
 
 home:
   links:
