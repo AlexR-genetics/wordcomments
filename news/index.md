@@ -22,12 +22,6 @@
 - Export to Excel, Word, CSV, Markdown, or HTML
 - Real-time status and logging
 
-### Documentation
-
-- Added vignette: “Introduction to wordcomments”
-- Added vignette: “Working with Multiple Co-authors”
-- Included example documents in `inst/extdata/`
-
 ### Notes
 
 - Output from

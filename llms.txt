@@ -175,18 +175,6 @@ export_comments(comments, "simple.csv",
     )
     table(all_comments$Source)
 
-## Documentation
-
-For detailed examples, see the vignettes:
-
-``` r
-# Introduction to wordcomments
-vignette("introduction", package = "wordcomments")
-
-# Working with multiple co-authors
-vignette("multiple-coauthors", package = "wordcomments")
-```
-
 ## Technical Notes
 
 - **Line numbers**: Word doesn’t store true line numbers internally. The
@@ -280,11 +268,3 @@ Package documentation
   [`wordcomments`](https://alexr-genetics.github.io/wordcomments/reference/wordcomments-package.md)
   : wordcomments: Extract and Analyze Comments from Word Documents
 
-# Articles
-
-### Getting Started
-
-- [Introduction to
-  wordcomments](https://alexr-genetics.github.io/wordcomments/articles/introduction.md):
-- [Working with Multiple
-  Co-authors](https://alexr-genetics.github.io/wordcomments/articles/multiple-coauthors.md):
