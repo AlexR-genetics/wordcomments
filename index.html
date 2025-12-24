@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">wordcomments</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,13 +51,13 @@
 </h1></div>
 <!-- badges: start -->
 
-<!-- badges: end -->
 <p><strong>wordcomments</strong> is an R package for extracting, analyzing, and managing comments from Microsoft Word (.docx) documents. It’s particularly useful for academic manuscript revision workflows and collaborative document review.</p>
 <div class="section level2">
 <h2 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
 </h2>
 <ul>
 <li>📄 <strong>Extract comments</strong> with full metadata (author, date, position, resolution status)</li>
+<li>📚 <strong>Multi-document support</strong> - merge comments from multiple reviewer versions</li>
 <li>🧵 <strong>Thread detection</strong> for comment conversations and replies</li>
 <li>👥 <strong>Filter by reviewer</strong> for multi-author documents</li>
 <li>📊 <strong>Summary statistics</strong> on comment activity</li>
@@ -190,6 +190,32 @@
 <span>                        include_resolved <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># 4. Open in Excel, fill in your responses, submit to journal!</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="multi-document-workflow">Multi-Document Workflow<a class="anchor" aria-label="anchor" href="#multi-document-workflow"></a>
+</h2>
+<p>When you have multiple reviewers working on separate copies of a document:</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Extract and merge comments from all reviewer versions</span></span>
+<span><span class="va">all_comments</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/extract_comments_multiple.html">extract_comments_multiple</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"manuscript_reviewer1.docx"</span>,</span>
+<span>    <span class="st">"manuscript_reviewer2.docx"</span>,</span>
+<span>    <span class="st">"manuscript_editor.docx"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Works with all other functions</span></span>
+<span><span class="fu"><a href="reference/comment_summary.html">comment_summary</a></span><span class="op">(</span><span class="va">all_comments</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/comments_by_reviewer.html">comments_by_reviewer</a></span><span class="op">(</span><span class="va">all_comments</span>, split <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Generate consolidated response table</span></span>
+<span><span class="fu"><a href="reference/generate_response_table.html">generate_response_table</a></span><span class="op">(</span><span class="va">all_comments</span>, <span class="st">"consolidated_response.xlsx"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Optional: track which document each comment came from</span></span>
+<span><span class="va">all_comments</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/extract_comments_multiple.html">extract_comments_multiple</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"reviewer1.docx"</span>, <span class="st">"reviewer2.docx"</span><span class="op">)</span>,</span>
+<span>  add_source <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">all_comments</span><span class="op">$</span><span class="va">Source</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="technical-notes">Technical Notes<a class="anchor" aria-label="anchor" href="#technical-notes"></a>

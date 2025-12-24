@@ -10,9 +10,17 @@ manuscript revision workflows and collaborative document review.
 
   Extract all comments with full metadata
 
+- [`extract_comments_multiple`](https://alexr-genetics.github.io/wordcomments/reference/extract_comments_multiple.md):
+
+  Extract and merge comments from multiple documents
+
 - [`has_comments`](https://alexr-genetics.github.io/wordcomments/reference/has_comments.md):
 
   Quick check for presence of comments
+
+- [`has_comments_multiple`](https://alexr-genetics.github.io/wordcomments/reference/has_comments_multiple.md):
+
+  Quick check across multiple documents
 
 - [`comment_summary`](https://alexr-genetics.github.io/wordcomments/reference/comment_summary.md):
 
@@ -46,6 +54,17 @@ manuscript revision workflows and collaborative document review.
     # Generate response table for journal revision
     generate_response_table(comments, "response_to_reviewers.xlsx")
 
+## Multi-Document Workflow
+
+    # Extract comments from multiple reviewer versions
+    all_comments <- extract_comments_multiple(
+      c("reviewer1.docx", "reviewer2.docx", "editor.docx")
+    )
+
+    # Works with all other functions
+    comment_summary(all_comments)
+    generate_response_table(all_comments, "consolidated_response.xlsx")
+
 ## See also
 
 Useful links:
@@ -57,3 +76,4 @@ Useful links:
 ## Author
 
 **Maintainer**: Alexandros Rammos <vd18986@bristol.ac.uk>
+([ORCID](https://orcid.org/YOUR-ORCID-ID))

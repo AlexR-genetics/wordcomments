@@ -43,6 +43,6 @@ smith_comments <- comments_by_reviewer(comments, reviewer = "Smith")
 
 # Split by all reviewers
 by_reviewer <- comments_by_reviewer(comments, split = TRUE)
-names(by_reviewer)  # Lists all reviewer names
+names(by_reviewer)  # Shows all reviewer names
 } # }
 ```

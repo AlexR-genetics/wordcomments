@@ -9,7 +9,7 @@ separate data frames by author."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">wordcomments</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ separate data frames by author."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Filter or split comments by reviewer/author</h1>
-      <small class="dont-index">Source: <a href="https://github.com/AlexR-genetics/wordcomments/blob/v0.1.1/R/analyze.R" class="external-link"><code>R/analyze.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/AlexR-genetics/wordcomments/blob/main/R/analyze.R" class="external-link"><code>R/analyze.R</code></a></small>
       <div class="d-none name"><code>comments_by_reviewer.Rd</code></div>
     </div>
 
@@ -67,7 +67,7 @@ list of data frames split by author. Default FALSE.</p></dd>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>If <code>reviewer</code> is specified or <code>split = FALSE</code>: a data frame.
-  If <code>split = TRUE</code>: a named list of data frames, one per author.</p>
+If <code>split = TRUE</code>: a named list of data frames, one per author.</p>
     </div>
 
     <div class="section level2">
@@ -80,7 +80,7 @@ list of data frames split by author. Default FALSE.</p></dd>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Split by all reviewers</span></span></span>
 <span class="r-in"><span><span class="va">by_reviewer</span> <span class="op">&lt;-</span> <span class="fu">comments_by_reviewer</span><span class="op">(</span><span class="va">comments</span>, split <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">by_reviewer</span><span class="op">)</span>  <span class="co"># Lists all reviewer names</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">by_reviewer</span><span class="op">)</span>  <span class="co"># Shows all reviewer names</span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

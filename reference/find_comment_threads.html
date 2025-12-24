@@ -9,7 +9,7 @@ including replies to comments."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">wordcomments</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ including replies to comments."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Group comments into conversation threads</h1>
-      <small class="dont-index">Source: <a href="https://github.com/AlexR-genetics/wordcomments/blob/v0.1.1/R/analyze.R" class="external-link"><code>R/analyze.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/AlexR-genetics/wordcomments/blob/main/R/analyze.R" class="external-link"><code>R/analyze.R</code></a></small>
       <div class="d-none name"><code>find_comment_threads.Rd</code></div>
     </div>
 
@@ -64,29 +64,29 @@ thread_id column added. If FALSE, returns a nested list structure.</p></dd>
     <p>If <code>flatten = TRUE</code>: a data frame with additional columns:</p><dl><dt>thread_id</dt>
 <dd><p>Integer identifying the conversation thread</p></dd>
 
-  <dt>thread_size</dt>
+<dt>thread_size</dt>
 <dd><p>Number of comments in this thread</p></dd>
 
-  <dt>reply_depth</dt>
+<dt>reply_depth</dt>
 <dd><p>Nesting depth (0 for root comments)</p></dd>
 
 
 </dl><p>If <code>flatten = FALSE</code>: a list of thread objects, each containing:</p><dl><dt>thread_id</dt>
 <dd><p>Thread identifier</p></dd>
 
-  <dt>root_comment</dt>
+<dt>root_comment</dt>
 <dd><p>Data frame with the original comment</p></dd>
 
-  <dt>replies</dt>
+<dt>replies</dt>
 <dd><p>Data frame with reply comments</p></dd>
 
-  <dt>size</dt>
+<dt>size</dt>
 <dd><p>Total comments in thread</p></dd>
 
-  <dt>authors</dt>
+<dt>authors</dt>
 <dd><p>Character vector of participating authors</p></dd>
 
-  <dt>resolved</dt>
+<dt>resolved</dt>
 <dd><p>Logical indicating if thread is resolved</p></dd>
 
 

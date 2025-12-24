@@ -6,8 +6,12 @@ Core functions for extracting comments from Word documents
 
 - [`extract_comments()`](https://alexr-genetics.github.io/wordcomments/reference/extract_comments.md)
   : Extract comments from a Word document
+- [`extract_comments_multiple()`](https://alexr-genetics.github.io/wordcomments/reference/extract_comments_multiple.md)
+  : Extract and merge comments from multiple document versions
 - [`has_comments()`](https://alexr-genetics.github.io/wordcomments/reference/has_comments.md)
   : Check if a Word document contains comments
+- [`has_comments_multiple()`](https://alexr-genetics.github.io/wordcomments/reference/has_comments_multiple.md)
+  : Quick check for comments in multiple documents
 
 ## Analyze Comments
 
@@ -35,6 +39,6 @@ Functions for exporting comments and generating reports
 
 Package documentation
 
-- [`wordcomments`](https://alexr-genetics.github.io/wordcomments/reference/wordcomments-package.md)
-  [`wordcomments-package`](https://alexr-genetics.github.io/wordcomments/reference/wordcomments-package.md)
+- [`wordcomments-package`](https://alexr-genetics.github.io/wordcomments/reference/wordcomments-package.md)
+  [`wordcomments`](https://alexr-genetics.github.io/wordcomments/reference/wordcomments-package.md)
   : wordcomments: Extract and Analyze Comments from Word Documents

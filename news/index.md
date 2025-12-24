@@ -1,5 +1,24 @@
 # Changelog
 
+## wordcomments 0.2.0
+
+### New Features
+
+- [`extract_comments_multiple()`](https://alexr-genetics.github.io/wordcomments/reference/extract_comments_multiple.md) -
+  Extract and merge comments from multiple document versions with
+  automatic ID renumbering to avoid conflicts
+- [`has_comments_multiple()`](https://alexr-genetics.github.io/wordcomments/reference/has_comments_multiple.md) -
+  Quick check for comments across multiple documents
+
+### Notes
+
+- Output from
+  [`extract_comments_multiple()`](https://alexr-genetics.github.io/wordcomments/reference/extract_comments_multiple.md)
+  is fully compatible with all existing functions
+  ([`comment_summary()`](https://alexr-genetics.github.io/wordcomments/reference/comment_summary.md),
+  [`generate_response_table()`](https://alexr-genetics.github.io/wordcomments/reference/generate_response_table.md),
+  etc.)
+
 ## wordcomments 0.1.0
 
 ### New Features
