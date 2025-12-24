@@ -4,8 +4,15 @@
 #' Word (.docx) documents. Particularly useful for academic manuscript revision
 #' workflows and collaborative document review.
 #'
+#' @section Graphical User Interface:
+#' For an interactive experience, launch the Shiny GUI:
+#' ```
+#' launch_app()
+#' ```
+#'
 #' @section Main Functions:
 #' \describe{
+#'   \item{\code{\link{launch_app}}}{Launch interactive Shiny GUI}
 #'   \item{\code{\link{extract_comments}}}{Extract all comments with full metadata}
 #'   \item{\code{\link{extract_comments_multiple}}}{Extract and merge comments from multiple documents}
 #'   \item{\code{\link{has_comments}}}{Quick check for presence of comments}

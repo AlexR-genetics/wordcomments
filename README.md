@@ -1,4 +1,4 @@
-# wordcomments
+# wordcomments 
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/AlexR-genetics/wordcomments/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AlexR-genetics/wordcomments/actions/workflows/R-CMD-check.yaml)
@@ -26,6 +26,21 @@ Install the development version from GitHub:
 # install.packages("devtools")
 devtools::install_github("AlexR-genetics/wordcomments")
 ```
+
+## Graphical User Interface
+
+wordcomments includes an interactive Shiny GUI:
+
+```r
+library(wordcomments)
+launch_app()
+```
+
+This opens a browser-based interface with:
+- File browser for single or multiple documents
+- Interactive tables with filtering and sorting
+- Tabs for Comments, Summary, By Reviewer, Threads, and Response Table
+- Export to multiple formats
 
 ## Quick Start
 
@@ -145,22 +160,6 @@ export_comments(comments, "simple.csv",
                 columns = c("Author", "Comment", "Resolved"))
 ```
 
-## Typical Workflow for Manuscript Revision
-
-```r
-library(wordcomments)
-
-# 1. Load commented manuscript
-comments <- extract_comments("reviewed_manuscript.docx")
-
-# 2. Get overview
-comment_summary(comments)
-
-# 3. Generate response document for the journal
-generate_response_table(comments, "response_to_reviewers.xlsx",
-                        include_resolved = FALSE)
-
-# 4. Open in Excel, fill in your responses, submit to journal!
 ```
 
 ## Multi-Document Workflow

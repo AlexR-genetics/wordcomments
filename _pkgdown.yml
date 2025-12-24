@@ -15,6 +15,11 @@ navbar:
       aria-label: GitHub
 
 reference:
+  - title: "GUI"
+    desc: "Interactive graphical interface"
+    contents:
+      - launch_app
+
   - title: "Extract Comments"
     desc: "Core functions for extracting comments from Word documents"
     contents:

@@ -10,9 +10,18 @@ A toolkit for extracting, analyzing, and managing comments from Microsoft
 Word (.docx) documents. Particularly useful for academic manuscript revision
 workflows and collaborative document review.
 }
+\section{Graphical User Interface}{
+
+For an interactive experience, launch the Shiny GUI:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{launch_app()
+}\if{html}{\out{</div>}}
+}
+
 \section{Main Functions}{
 
 \describe{
+\item{\code{\link{launch_app}}}{Launch interactive Shiny GUI}
 \item{\code{\link{extract_comments}}}{Extract all comments with full metadata}
 \item{\code{\link{extract_comments_multiple}}}{Extract and merge comments from multiple documents}
 \item{\code{\link{has_comments}}}{Quick check for presence of comments}
@@ -63,6 +72,6 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Alexandros Rammos \email{vd18986@bristol.ac.uk} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Alexandros Rammos \email{vd18986@bristol.ac.uk} (\href{https://orcid.org/0000-0001-7491-9659}{ORCID})
 
 }
